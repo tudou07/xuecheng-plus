@@ -1,0 +1,135 @@
+###课程查询列表
+POST http://{{content_host}}/content/course/list?pageNo=2&pageSize=10
+Content-Type: application/json
+
+{
+  "auditStatus": "202002",
+  "courseName": "1"
+}
+
+###课程查询列表-网关路由
+POST http://{{gateway_host}}/content/course/list?pageNo=2&pageSize=10
+Content-Type: application/json
+
+{
+  "auditStatus": "202002",
+  "courseName": "1"
+}
+
+###根据Id查询
+
+GET http://{{content_host}}/content/course/1
+
+
+###新增课程
+
+POST http://{{content_host}}/content/course
+Content-Type: application/json
+
+{
+  "charge": "201001",
+  "price": 20,
+  "originalPrice":100,
+  "qq": "22333",
+  "wechat": "223344",
+  "phone": "13333333",
+  "validDays": 365,
+  "mt": "1-1",
+  "st": "1-1-1",
+  "name": "新增测试",
+  "pic": "",
+  "teachmode": "200002",
+  "users": "初级人员,开发经验不足，有自学能力的",
+  "tags": "",
+  "grade": "204001",
+  "description": "",
+  "objectives": ""
+}
+
+### 修改课程
+PUT {{content_host}}/content/course
+Content-Type: application/json
+
+{
+  "id": 40,
+  "companyName": null,
+  "name": "开发核心",
+  "users": "springboot初学者",
+  "tags": "Spring项目的快速构建",
+  "mt": "1-3",
+  "st": "1-3-2",
+  "grade": "200003",
+  "teachmode": "201001",
+  "description": "课程系统性地深度探讨 核心特性，引导小伙伴对 Java 规范的重视，启发对技术原理性的思考，掌握排查问题的技能，以及学习阅读源码的方法和技巧，全面提升研发能力，进军架构师队伍。",
+  "pic": "https://cdn.educba.com/academy/wp-content/uploads/2018/08/Spring-BOOTInterview-questions.jpg",
+  "charge": "201001",
+  "price": 23.0
+}
+
+###查询课程计划
+GET {{content_host}}/content/teachplan/1/tree-nodes
+
+###新增课程计划-章
+POST {{content_host}}/content/teachplan
+Content-Type: application/json
+
+{
+  "courseId": 74,
+  "parentid": 0,
+  "grade": 1,
+  "pname": "新的一章"
+}
+
+###新增课程计划-章
+POST {{content_host}}/content/teachplan
+Content-Type: application/json
+
+{
+  "courseId": 74,
+  "parentid": 247,
+  "grade": 2,
+  "pname": "新的一节"
+}
+
+### 课程课程计划,需要从数据库找到修改的课程计划id
+POST {{content_host}}/content/teachplan
+Content-Type: application/json
+
+{
+  "id": "293",
+  "changeDate" : null,
+  "courseId" : 22,
+  "cousePubId" : null,
+  "createDate" : null,
+  "ctlBarShow" : false,
+  "ctlEditTitle" : true,
+  "endTime" : null,
+  "grade" : "2",
+  "isPreview" : "1",
+  "mediaType" : "",
+  "orderby" : 1,
+  "parentid" : 237,
+  "pname" : "第1节修改",
+  "startTime" : null,
+  "status" : null,
+  "teachPlanId" : 240
+}
+
+Plain Text
+### 查询课程发布信息
+GET {{content_host}}/content/r/coursepublish/2
+
+###认证测试
+GET http://localhost:63040/content/course/2
+
+### 携带token访问资源服务
+GET http://localhost:63040/content/course/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsieHVlY2hlbmctcGx1cyJdLCJ1c2VyX25hbWUiOiJ6aGFuZ3NhbiIsInNjb3BlIjpbImFsbCJdLCJleHAiOjE2ODYzMzExNTIsImF1dGhvcml0aWVzIjpbInAxIl0sImp0aSI6Ijk5MTI4YmY0LTgxODctNGMxYi1hMzlhLTVmNWIyNmI0ODUwOSIsImNsaWVudF9pZCI6IlhjV2ViQXBwIn0.V8VG1bDKhed-CVj8iIC0t5VjIVy026XewHnphivJXHY
+
+### 通过网关访问资源服务
+GET http://localhost:63010/content/course/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsieHVlY2hlbmctcGx1cyJdLCJ1c2VyX25hbWUiOiJ6aGFuZ3NhbiIsInNjb3BlIjpbImFsbCJdLCJleHAiOjE2ODYzMzExNTIsImF1dGhvcml0aWVzIjpbInAxIl0sImp0aSI6Ijk5MTI4YmY0LTgxODctNGMxYi1hMzlhLTVmNWIyNmI0ODUwOSIsImNsaWVudF9pZCI6IlhjV2ViQXBwIn0.V8VG1bDKhed-CVj8iIC0t5VjIVy026XewHnphivJXHY
+
+### 通过网关访问资源服务-连接数据库模式下
+GET http://localhost:63010/content/course/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsieHVlY2hlbmctcGx1cyJdLCJ1c2VyX25hbWUiOiJ7XCJiaXJ0aGRheVwiOlwiMjAyMi0wOS0yOFQxOToyODo0NlwiLFwiY3JlYXRlVGltZVwiOlwiMjAyMi0wOS0yOFQwODozMjowM1wiLFwiaWRcIjpcIjUwXCIsXCJuYW1lXCI6XCLlrabnlJ8xXCIsXCJuaWNrbmFtZVwiOlwi5aSn5rC054mbXCIsXCJzZXhcIjpcIjFcIixcInN0YXR1c1wiOlwiMVwiLFwidXNlcm5hbWVcIjpcInN0dTFcIixcInVzZXJwaWNcIjpcImh0dHA6Ly9maWxlLnh1ZWNoZW5nLXBsdXMuY29tL2RkZGZcIixcInV0eXBlXCI6XCIxMDEwMDFcIn0iLCJzY29wZSI6WyJhbGwiXSwiZXhwIjoxNjg2NDIwNzkzLCJhdXRob3JpdGllcyI6WyJwMSJdLCJqdGkiOiI2MmRjNzUzYS01YjYyLTQ2MTEtYTZiYi02MTEwNWU5NzM2OWQiLCJjbGllbnRfaWQiOiJYY1dlYkFwcCJ9.Gfd3gdGIA2VIej2NgTiwponvRrrrtxMW7Nssp7zAIzw

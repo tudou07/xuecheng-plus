@@ -1,0 +1,12 @@
+### 申请验证码
+POST {{checkcode_host}}/checkcode/pic
+
+### 申请验证码
+POST 192.168.17.65:63075/checkcode/pic
+
+### 校验验证码
+POST {{checkcode_host}}/checkcode/verify?key=checkcode:d4c6a222153d45ea8d89727894db1502&code=27FW
+
+
+### 测试验证码controller
+GET {{checkcode_host}}/checkcode/test

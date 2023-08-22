@@ -13,4 +13,10 @@
     <description>xuecheng-plus-content</description>
     <packaging>pom</packaging>
 
+    <modules>
+        <module>xuecheng-plus-content-api</module>
+        <module>xuecheng-plus-content-model</module>
+        <module>xuecheng-plus-content-service</module>
+    </modules>
+
 </project>

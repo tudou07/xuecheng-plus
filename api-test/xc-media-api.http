@@ -1,0 +1,18 @@
+###媒资列表查询
+POST http://{{gateway_host}}/media/files?pageNo=1&pageSize=10
+Content-Type: application/json
+
+{
+  "fileType": "",
+  "auditStatus": ""
+}
+
+### 上传文件
+POST {{media_host}}/media/upload/coursefile
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="filedata"; filename="deskCopy.png"
+Content-Type: application/octet-stream
+
+< D:/Java/fileTest/deskCopy.png
