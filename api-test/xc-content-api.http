@@ -115,7 +115,6 @@ Content-Type: application/json
   "teachPlanId" : 240
 }
 
-Plain Text
 ### 查询课程发布信息
 GET {{content_host}}/content/r/coursepublish/2
 
@@ -133,3 +132,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsieHVlY2hlb
 ### 通过网关访问资源服务-连接数据库模式下
 GET http://localhost:63010/content/course/2
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsieHVlY2hlbmctcGx1cyJdLCJ1c2VyX25hbWUiOiJ7XCJiaXJ0aGRheVwiOlwiMjAyMi0wOS0yOFQxOToyODo0NlwiLFwiY3JlYXRlVGltZVwiOlwiMjAyMi0wOS0yOFQwODozMjowM1wiLFwiaWRcIjpcIjUwXCIsXCJuYW1lXCI6XCLlrabnlJ8xXCIsXCJuaWNrbmFtZVwiOlwi5aSn5rC054mbXCIsXCJzZXhcIjpcIjFcIixcInN0YXR1c1wiOlwiMVwiLFwidXNlcm5hbWVcIjpcInN0dTFcIixcInVzZXJwaWNcIjpcImh0dHA6Ly9maWxlLnh1ZWNoZW5nLXBsdXMuY29tL2RkZGZcIixcInV0eXBlXCI6XCIxMDEwMDFcIn0iLCJzY29wZSI6WyJhbGwiXSwiZXhwIjoxNjg2NDIwNzkzLCJhdXRob3JpdGllcyI6WyJwMSJdLCJqdGkiOiI2MmRjNzUzYS01YjYyLTQ2MTEtYTZiYi02MTEwNWU5NzM2OWQiLCJjbGllbnRfaWQiOiJYY1dlYkFwcCJ9.Gfd3gdGIA2VIej2NgTiwponvRrrrtxMW7Nssp7zAIzw
+
+
+###open课程查询测试
+GET http://{{gateway_host}}/content/open/course/whole/120
