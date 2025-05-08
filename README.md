@@ -1,0 +1,3 @@
+This is a B2B2C online education platform where educational institutions can publish courses for users to study online after registering on the platform. The system comprises six main components: portal, personal learning center, educational institution management platform, operations platform, social system, and system management.
+
+The project adopts a frontend-backend separated technical architecture, utilizing the Spring Cloud technology stack to build microservices. The database uses MySQL, with additional technologies including Nacos, Spring Cloud Gateway, Redis, RabbitMQ, Elasticsearch, and XXL-Job.
